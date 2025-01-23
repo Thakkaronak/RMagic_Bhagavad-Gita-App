@@ -3,7 +3,7 @@ import 'package:bhagavad_gita/Constant/app_size_config.dart';
 import 'package:bhagavad_gita/Constant/quotes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 class QuotesScreen extends StatefulWidget {
   @override
@@ -134,7 +134,7 @@ class _QuotesScreenState extends State<QuotesScreen>
                 child: Text(
                   quote,
                   textAlign: TextAlign.left,
-                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: whiteColor,
                       fontSize: (Localizations.localeOf(context).languageCode == 'hi') ?
                       21 : 18,

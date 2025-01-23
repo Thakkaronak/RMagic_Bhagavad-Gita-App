@@ -75,7 +75,7 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
                     .toString(),
                 style: Theme.of(context)
                     .textTheme
-                    .headline2!
+                    .displayMedium!
                     .copyWith(height: 1.5, color: greyScalBodyColor),
               ),
               SizedBox(width: 175),
@@ -85,106 +85,112 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
                     .toString(),
                 style: Theme.of(context)
                     .textTheme
-                    .headline2!
+                    .displayMedium!
                     .copyWith(height: 1.5, color: greyScalBodyColor),
               ),
             ],
           ),
           SizedBox(height: 10),
-          Container(
-            child: Row(
-              children: [
-                Material(
-                  child: InkWell(
-                    onTap: () {
-                      widget.fontSizeIncrease(true);
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 76,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: editBoxBorderColor,
-                          style: BorderStyle.solid,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                        ),
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          'assets/icons/image_aa_pluse.svg',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Material(
-                  child: InkWell(
-                    onTap: () {
-                      widget.fontSizeIncrease(false);
-                    },
-                    child: Container(
-                      height: 40,
-                      width: 76,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: editBoxBorderColor,
-                            style: BorderStyle.solid),
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(10),
-                        ),
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          'assets/icons/image_aa_min.svg',
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Row(
+          Row(
+            children: [
+              Expanded(
+                child: Row(
                   children: [
-                    Material(
-                      child: InkWell(
-                        onTap: () {
-                          print('change font family');
-                          _onPressedInter(context,
-                              selectedFontFamily: (String fontFamily) {
-                            setState(() {
-                              fontFamilyName = fontFamily;
-                            });
-                            print('Selected font family 0: $fontFamily');
-                            widget.selectedFontFamily(fontFamily);
-                          });
-                        },
-                        child: Container(
-                          height: 40,
-                          width: 180,
-                          decoration: BoxDecoration(
-                            border: Border.all(
+                    Expanded(
+                      child: Material(
+                        child: InkWell(
+                          onTap: () {
+                            widget.fontSizeIncrease(true);
+                          },
+                          child: Container(
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: whiteFormatingColor.bgColor,
+                              border: Border.all(
                                 color: editBoxBorderColor,
-                                style: BorderStyle.solid),
-                            borderRadius: BorderRadius.circular(5),
+                                style: BorderStyle.solid,
+                              ),
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                              ),
+                            ),
+                            child: Center(
+                              child: SvgPicture.asset(
+                                'assets/icons/image_aa_pluse.svg',
+                              ),
+                            ),
                           ),
-                          child: Center(
-                            child: Text(
-                              fontFamilyName,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(
-                                      fontSize: 18, color: titleLableColor),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Material(
+                        child: InkWell(
+                          onTap: () {
+                            widget.fontSizeIncrease(false);
+                          },
+                          child: Container(
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: whiteFormatingColor.bgColor,
+                              border: Border.all(
+                                  color: editBoxBorderColor,
+                                  style: BorderStyle.solid),
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10),
+                              ),
+                            ),
+                            child: Center(
+                              child: SvgPicture.asset(
+                                'assets/icons/image_aa_min.svg',
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
                   ],
-                )
-              ],
-            ),
+                ),
+              ),
+              SizedBox(width: 30),
+              Expanded(
+                child: Material(
+                  child: InkWell(
+                    onTap: () {
+                      print('change font family');
+                      _onPressedInter(context,
+                          selectedFontFamily: (String fontFamily) {
+                        setState(() {
+                          fontFamilyName = fontFamily;
+                        });
+                        print('Selected font family 0: $fontFamily');
+                        widget.selectedFontFamily(fontFamily);
+                      });
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: whiteFormatingColor.bgColor,
+                        border: Border.all(
+                            color: editBoxBorderColor,
+                            style: BorderStyle.solid),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Center(
+                        child: Text(
+                          fontFamilyName,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(fontSize: 18, color: titleLableColor),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
           SizedBox(height: 16),
           Column(
@@ -196,7 +202,7 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
                     .toString(),
                 style: Theme.of(context)
                     .textTheme
-                    .headline2!
+                    .displayMedium!
                     .copyWith(height: 1.5, color: greyScalBodyColor),
               ),
               SizedBox(height: 10),
@@ -262,7 +268,7 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
                 DemoLocalization.of(context)!
                     .getTranslatedValue('colorMode')
                     .toString(),
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.displayMedium,
               ),
               SizedBox(height: 10),
               Row(
@@ -318,9 +324,10 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
       {required Function(String) selectedFontFamily}) {
     showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.transparent,
       builder: (context) {
         return Container(
-          color: Color(0X80000000).withOpacity(0.80),
+          color: Colors.transparent,
           height: 350,
           child: Container(
             child: InterClick(
@@ -329,7 +336,7 @@ class _BottomNavigationMenuState extends State<BottomNavigationMenu> {
               },
             ),
             decoration: BoxDecoration(
-              color: Theme.of(context).canvasColor,
+              color: whiteFormatingColor.bgColor,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
